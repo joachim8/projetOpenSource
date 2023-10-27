@@ -1,11 +1,14 @@
+# la classe TaskManager
 class TaskManager:
     def __init__(self):
         self.tasks = []
     
+    # ajout de l'une tache
     def add_task(self, description):
         self.tasks.append(description)
         print("Tache ajoutee avec succes.")
     
+    #affichage list des taches existantes
     def list_tasks(self):
         if not self.tasks:
             print("Aucune tache enregistree.")
@@ -14,6 +17,7 @@ class TaskManager:
             for i, task in enumerate(self.tasks, start=1):
                 print(f"{i}. {task}")
     
+    #completion d'une tache (suppression)
     def mark_task_completed(self, task_num):
         if 1 <= task_num <= len(self.tasks):
             self.tasks.pop(task_num - 1)
@@ -21,6 +25,7 @@ class TaskManager:
         else:
             print("Numero de tache invalide.")
     
+    #affichage menu en console & interaction avec l'utilisateur
     def run(self):
         while True:
             print("\nBienvenue dans le Gestionnaire de Taches en python.")
