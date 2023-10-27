@@ -43,8 +43,11 @@ class TaskManager:
             elif option == '2':
                 self.list_tasks()
             elif option == '3':
-                task_num = int(input("Entrez le numéro de la tâche a marquer comme terminee : "))
-                self.mark_task_completed(task_num)
+                if len(self.tasks) < 1:
+                    print("Aucune tâche en cours")
+                else:
+                    task_num = int(input("Entrez le numero de la tache a marquer comme terminee : "))
+                    self.mark_task_completed(task_num)
             elif option == '4':
                 break
             else:
