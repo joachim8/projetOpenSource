@@ -3,42 +3,42 @@ class TaskManager:
     def __init__(self):
         self.tasks = []
     
-    # ajout de l'une tache
+    # ajout de l'une tâche
     def add_task(self, description):
         self.tasks.append(description)
-        print("Tache ajoutee avec succes.")
+        print("Tâche ajoutée avec succes.")
     
-    #affichage list des taches existantes
+    #affichage list des tâches existantes
     def list_tasks(self):
         if not self.tasks:
-            print("Aucune tache enregistree.")
+            print("Aucune tâche enregistrée.")
         else:
-            print("Liste des taches a faire:")
+            print("Liste des tâches à faire:")
             for i, task in enumerate(self.tasks, start=1):
                 print(f"{i}. {task}")
     
-    #completion d'une tache (suppression)
+    #complétion d'une tâche (suppression)
     def mark_task_completed(self, task_num):
         if 1 <= task_num <= len(self.tasks):
             self.tasks.pop(task_num - 1)
-            print("Tache marquee comme terminee avec succes.")
+            print("Tâche marquée comme terminée avec succes.")
         else:
-            print("Numero de tache invalide.")
+            print("Numéro de la tâche invalide.")
     
     #affichage menu en console & interaction avec l'utilisateur
     def run(self):
         while True:
-            print("\nBienvenue dans le Gestionnaire de Taches en python.")
-            print("Selectionnez une option :")
-            print("1. Ajouter une tache")
-            print("2. Afficher les taches")
-            print("3. Marquer une tache comme terminee")
+            print("\nBienvenue dans le Gestionnaire de Tâches en python.")
+            print("Sélectionnez une option :")
+            print("1. Ajouter une tâche")
+            print("2. Afficher les tâches")
+            print("3. Marquer une tâche comme terminée")
             print("4. Quitter")
             
-            option = input("Entrez le numero de l'option : ")
+            option = input("Entrez le numéro de l'option : ")
             
             if option == '1':
-                description = input("Entrez la description de la tache : ")
+                description = input("Entrez la description de la tâche : ")
                 self.add_task(description)
             elif option == '2':
                 self.list_tasks()
@@ -51,7 +51,7 @@ class TaskManager:
             elif option == '4':
                 break
             else:
-                print("Option invalide. Veuillez reessayer.")
+                print("Option invalide. Veuillez réessayer.")
 
 if __name__ == "__main__":
     task_manager = TaskManager()
